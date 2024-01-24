@@ -10,7 +10,6 @@ function Show-JLGuestUserInGAL {
 
     if ($null -eq $guestUser) {
         Write-Output "User either not found or not a guest user."
-        Exit
     }
     else {
         Update-MgBetaUser -UserId $guestUser.Id -ShowInAddressList
