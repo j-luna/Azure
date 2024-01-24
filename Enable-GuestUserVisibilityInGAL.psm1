@@ -13,7 +13,8 @@ function Show-JLGuestUserInGAL {
         Exit
     }
     else {
-        
+        Update-MgBetaUser -UserId $guestUser.Id -ShowInAddressList
+        Write-Output "$($guestUser.mail) is now shown in the GAL."
     }
 
 }
