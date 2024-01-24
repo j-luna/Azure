@@ -3,6 +3,17 @@
 function Show-JLGuestUserInGAL {
     param(
       [Parameter(Mandatory=$true)]
-      [String]$userEmail
+      [String]$guestUserEmail
     )
+
+    $guestUser = Get-MgBetaUser -Filter "mail eq '$guestUserEmail'" | Where-Object {$_.CreationType -eq "Invitation"}
+
+    if ($null -eq $guestUser) {
+        Write-Output "User either not found or not a guest user."
+        Exit
+    }
+    else {
+        
+    }
+
 }
